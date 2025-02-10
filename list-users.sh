@@ -11,6 +11,8 @@ TOKEN=$token
 REPO_OWNER=$1
 REPO_NAME=$2
 
+
+
 # Function to make a GET request to the GitHub API
 function github_api_get {
     local endpoint="$1"
@@ -35,6 +37,13 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
+function helper {
+    expected_cmd_args=2
+    if [ $# -ne $expected_cmd_args ]; then
+        echo "please add command line arguments"
+    fi
+}
+helper
 
 # Main script
 
